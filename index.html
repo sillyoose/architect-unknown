@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>architect unknown</title>
+  
+  <!-- Favicon configured to use the uploaded favicon.png -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Modern Tailwind CSS for clean layout -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Clean, crisp typography matching original Google Site styling */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle cursor cues */
+    .portal-circle {
+      cursor: pointer;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .portal-circle:hover {
+      transform: scale(1.015);
+      opacity: 0.96;
+    }
+
+    /* Smooth page view switcher */
+    .view-container {
+      transition: opacity 0.3s ease-in-out;
+    }
+    .view-hidden {
+      display: none !important;
+      opacity: 0;
+    }
+    .view-visible {
+      display: flex !important;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen w-full relative">
+
+  <!-- =========================================================================
+       PAGE 1: LANDING PAGE (Screenshot 1)
+       - Pure white backdrop
+       - Circular looping GIF centered horizontally and vertically
+       - Clicking the circular image switches to Page 2
+       ========================================================================= -->
+  <main id="landing-page" class="view-container view-visible min-h-screen w-full items-center justify-center p-6">
+    <div 
+      class="portal-circle rounded-full overflow-hidden w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[460px] md:h-[460px] shadow-sm select-none"
+      onclick="navigateTo('null')"
+      title="Enter architect unknown"
+    >
+      <img 
+        src="landing.gif" 
+        alt="Architect Unknown portal" 
+        class="w-full h-full object-cover pointer-events-none"
+        onerror="if(this.src.endsWith('.gif')) { this.src='landing.jpg'; } else { this.onerror=null; this.src='https://placehold.co/600x600/e5e7eb/737373?text=landing.gif'; }" 
+      />
+    </div>
+  </main>
+
+
+  <!-- =========================================================================
+       PAGE 2: MAIN HOME PAGE (Screenshot 2)
+       - Pure white backdrop
+       - Two-column layout: Square looping GIF on the left, 1:1 text on the right
+       - Gray social icons (Instagram & Email)
+       ========================================================================= -->
+  <main id="null-page" class="view-container view-hidden min-h-screen w-full items-center justify-center px-6 py-12 md:py-16">
+    <div class="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
+      
+      <!-- LEFT COLUMN: Looping GIF -->
+      <div class="w-full flex justify-center md:justify-end">
+        <div class="w-full max-w-[420px] aspect-square overflow-hidden bg-black flex items-center justify-center">
+          <img 
+            src="home.gif" 
+            alt="Architect Unknown figure visual" 
+            class="w-full h-full object-cover"
+            onerror="this.onerror=null; this.src='https://placehold.co/500x500/000000/ffffff?text=home.gif';" 
+          />
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: 1:1 Exact Text Content & Social Links -->
+      <div class="w-full flex flex-col justify-center text-[13.5px] sm:text-[14px] leading-[1.45] text-black space-y-5">
+        
+        <!-- Paragraph 1 -->
+        <p>
+          this is a time and place where the practice of architecture is fully decoupled from the incentives that drive innovation and change. the ideals of design thinking and democratic design have slipped into group think while at the same time starchitects are overpaid and tokenized. the value of the designer as an individual thinker is dilute and threatened by pintrest and firms alike.
+        </p>
+
+        <!-- Paragraph 2 -->
+        <p>
+          architect unknown sets out to prod at this current paradigm of incentives, and instead focus on helping others imagine and build a future where instead of searching for solutions or answers we examine questions to uncover new questions. one where individuals are incentivized to test the absurd and surreal as well as the less than popular ideas about design, architecture, urbanism, city building, world building, cosmological development and most importantly fail.
+        </p>
+
+        <!-- Paragraph 3 / Stanza -->
+        <div class="space-y-0.5">
+          <p>without fame</p>
+          <p>without fortune</p>
+          <p>without failure</p>
+          <p>wtf</p>
+        </div>
+
+        <!-- Closing Signature -->
+        <p class="pt-3">
+          the architects who are not known
+        </p>
+
+        <!-- ===============================================================
+             SOCIAL LINKS (Gray on white as specified)
+             Replace the 'href' values below with your actual profile links!
+             =============================================================== -->
+        <div class="flex items-center gap-4 pt-2">
+          
+          <!-- INSTAGRAM LINK -->
+          <a 
+            href="https://www.instagram.com/n05am/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-[#737373] hover:text-[#111111] transition-colors"
+            title="Instagram"
+            aria-label="Instagram"
+          >
+            <!-- Clean SVG Instagram icon -->
+            <svg class="w-5 h-5 fill-none stroke-current stroke-[1.8]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+
+          <!-- EMAIL / CONTACT LINK -->
+          <a 
+            href="mailto:hello@architect-unknown.com" 
+            class="text-[#737373] hover:text-[#111111] transition-colors"
+            title="Email"
+            aria-label="Email"
+          >
+            <!-- Clean SVG Envelope icon -->
+            <svg class="w-5 h-5 fill-none stroke-current stroke-[1.8]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- =========================================================================
+       PAGE SWITCHING INTERACTION SCRIPT
+       - Shows landing page by default
+       - Navigates to null page on clicking circular GIF or when #null is in URL
+       - Supports browser back / forward buttons seamlessly
+       ========================================================================= -->
+  <script>
+    const landingView = document.getElementById('landing-page');
+    const nullView = document.getElementById('null-page');
+
+    function navigateTo(page) {
+      if (page === 'null') {
+        landingView.classList.remove('view-visible');
+        landingView.classList.add('view-hidden');
+        nullView.classList.remove('view-hidden');
+        nullView.classList.add('view-visible');
+        window.location.hash = 'null';
+      } else {
+        nullView.classList.remove('view-visible');
+        nullView.classList.add('view-hidden');
+        landingView.classList.remove('view-hidden');
+        landingView.classList.add('view-visible');
+        history.replaceState(null, null, ' ');
+      }
+    }
+
+    // Handle direct link access or reload with hash
+    window.addEventListener('load', () => {
+      if (window.location.hash === '#null') {
+        navigateTo('null');
+      }
+    });
+
+    // Handle browser back and forward button clicks
+    window.addEventListener('hashchange', () => {
+      if (window.location.hash === '#null') {
+        navigateTo('null');
+      } else {
+        navigateTo('landing');
+      }
+    });
+  </script>
+
+</body>
+</html>
